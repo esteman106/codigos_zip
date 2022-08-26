@@ -23,7 +23,7 @@ class CodigosController extends Controller
                 $final["locality"] = strtoupper($values->d_ciudad);
                 $final["federal_entity"]["key"] = intval($values->c_estado);
                 $final["federal_entity"]["name"] = strtoupper($values->d_estado);
-
+                $final["federal_entity"]["code"] = $values->c_CP ? $values->c_CP: null;
                 $final["settlements"][$key] = [
                     "key"=> intval($values->id_asenta_cpcons),
                     "name"=> strtoupper($values->d_asenta),
